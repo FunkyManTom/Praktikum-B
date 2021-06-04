@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{url}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=4cm,bindingoffset=5mm]{geometry}
+\usepackage{etoolbox}%
+\usepackage[ngerman]{babel}
+
+\newcommand{\makefootnotelist}[1]{%
+	\parbox{0.8\textwidth} {%
+		\footnotesize{%
+			\renewcommand*{\do}[1]{##1\\}%
+			\dolistcsloop{#1}}}}%
+\newcommand{\fancyfootnote}[1]{%
+	\footnotemark{}%
+	\def\listname{footlist\thepage}%
+	\def\n{$^{\the\numexpr\value{footnote}}$}
+	\ifcsdef{\listname}%
+	{\listcseadd{\listname}{\n\ #1}}%
+	{\csedef{\listname}{}%
+		\listcseadd{\listname}{\n\ #1}}%
+	\fancypagestyle{fancyfootnote}{%
+		\fancyfoot[LO,RE]{\makefootnotelist{\listname}}%
+		\fancyfoot[RO,LE]{Page \thepage}%
+		\fancyfoot[C]{}%
+	}\thispagestyle{fancyfootnote}}%
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\leftmark}
+\lhead{B3.1}
+\rfoot{Page \thepage}
+\renewcommand{\footrulewidth}{0.2pt}
+
+
+\title{Praktikumsbericht B 3.2: \\ \underline{$\gamma$-Spektroskopie mit HPGe-Detektor}}
+\author{Alexander Obradovic\\
+		\texttt{7338968}
+		\and
+		Marcus Sickmöller\\
+		\texttt{7359786}
+		\and
+		Tom Sittig\\
+		\texttt{7345424}}
+\date{04.06.2021}
+
+\begin{document}
+	\maketitle
+	\begin{center}
+	\includegraphics[scale=0.13]{siegel.jpg}
+	\end{center}
+	
+	\newpage
+	\tableofcontents
+	\newpage
+	\section{Einführung}
+	\newpage
+	\section{Vorbereitung}
+	\begin{itemize}
+	\item \textbf{Was geschieht beim Zusammenführen eines p- und eines n-Kontakts?}\\\\
+	Wird ein n-dotierter Kristall mit einem p-dotierten zusammen entsteht ein p-n-Übergang. Zwischen den beiden Kristallen entsteht eine „Verarmungszone“, durch die Diffusion der Ladungsträger. Diffusion der Ladungsträger beschreibt den Prozess, bei dem die beiden dotierten Kristalle versuchen die Ladungsunterschiede auszugleichen dabei werden nicht ausgleichbare unbewegliche Verunreinigungen erzeugt die man als Dotierung bezeichnet. In der Nähe der Verbindungsstelle kommen diese am häufigsten vor. \\
+	Die Verarmungszone bildet das aktive Detektionsvolumen. Durch Anlegen einer Spannung von außen, kann das Detektionsvolumen vergrößert werden. So kann die Detektionseffizienz erhöht werden.
+	\item \textbf{Warum wird der Detektor in Sperrrichtung betrieben?}\\\\
+	Durch das Anlegen der Spannung in Sperrrichtung steuert man, dass sich die Verarmungszone über den p-dotierten Kristall ausbreitet. Dies wird getan, da es eine einfache Möglichkeit ist hochreine Kristalle nur sehr leicht zu dotieren und an diesen leicht dotierten Kristall zwei stark dotierte Kristalle zu setzen. Diese Methode wird als p-i-n Diode bezeichnet, wobei das i den leicht dotierten hochreichen Kristall bezeichnet.
+	So kann eine sehr viel höhere Detektor Genauigkeit erzeugt werden.
+	\item \textbf{Wozu dient die gesamte Elektronik?}\\\\
+	Mit der Messelektronik werden ausgesendete $\gamma$-Quanten registriert, indem das $\gamma$-Quant im aktiven Volumen wechselwirkt und somit Compton-Streuung, Photoeffekt oder Paarbildung entsteht (je nach Energie des $\gamma$-Quants)
+	\item \textbf{Welche Funktion haben Hoch- und Tiefpass?}\\\\
+	Die Hauptfunktion von Hoch- und Tiefpass ist nur hohe beziehungsweise tiefe Frequenzen durchzulassen, die über beziehungsweise unter einer Grenzfrequenz liegen. Das Signal wird eindeutiger, da Störfrequenzen herausgefiltert werden.
+	\item \textbf{Was ist ein FET und warum kann man damit Signale verstärken?}\\\\
+	Ein FET (Feldeffekttransistor) ist eine Art von Transistor der über spannungsgesteuerte Schaltungselemente betrieben wird. der dazu genutzt wird, um Signale zu verstärken. Das Signal kann damit verstärkt werden in dem eine hohe konstante Quellspannung angelegt wird, die am Transistor gesperrt wird, solange keine Spannung am Gate anliegt. Der Detektor (p-n-Diode) ist am Gate angeschlossen, somit wird das Gate geöffnet so bald ein $gamma$-Quant registriert wird. Da die Quellenspannung manuell eingestellt werden kann, ist es einfach so das Signal zu verstärken.
+	\item \textbf{Wozu wird die Pole-Zero-Einstellung benötigt?}\\\\
+	Mithilfe der Pole-Zero-Einstellung können Unter- und Überschwinger nach dem Hauptverstärker korrigiert werden.
+	\item \textbf{Welcher Detektor hat die bessere intrinsische Auflösung, ein Germanium oder ein Siliziumdetektor?}\\\\
+	Die intrinsische Effizienz bestimmt gemeinsam mit der geometrischen Effizienz den Nachweiseffizienz Faktor $\epsilon$. Die intrinsische Auflösung wird durch Materialeigenschaften, Größe des aktiven Detektionsvolumen und dessen Energie bestimmt. Da Germanium eine höhere Ordnungszahl und eine höhere Dichte hat ist die Nachweiswahrscheinlichkeit höher als bei Siliziumdetektoren.
+	\item \textbf{Was geschieht beim Trapping?}\\\\
+	Das Trapping beschreibt den Ladungsträgerverlust durch tiefe Oberflächenstörstellen.
+	\item \textbf{Nimmt die Full-Energy-Peak-Effizienz mit zunehmender Energie zu oder ab? Worauf ist dies zurückzuführen?}\\\\
+	Die Full-Energy-Peak-Effizienz ist bei höherer Energie geringer, da es häufiger zu Paarbildung bei hoher Energie kommt.
+	
+	\end{itemize}
+\end{document}
