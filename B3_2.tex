@@ -68,13 +68,43 @@
 	\begin{itemize}
 	\item \textbf{Was bedeutet der Wirkungsquerschnitt anschaulich?}\\\\
 	Der Wirkungsquerschnitt $\sigma$ ist eine Angabe für die Wahrscheinlichkeit, dass eine bestimmte mögliche Interaktion stattfindet. Von welchen Größen, in welcher Kapazität der Wirkungsquerschnitt explizit abhängt unterscheidet demnach, welchen Vorgang man beobachtet/beschreibt. Im Falle unseres Experiments sind alle drei Wirkungsquerschnitte $\sigma_{Photo,Compton,Paar}$ abhängig von der Energie des Photons $E_\gamma$ und der Ordnungszahl $Z$.\\
-	Der Wirkungsquerschnitt ist in der Dimension Fläche gegeben und wird in der Kernphysik standardmäßig in Barn angegeben ($1b=10^{-28}m^2$)   
+	Der Wirkungsquerschnitt ist in der Dimension Fläche gegeben und wird in der Kernphysik standardmäßig in Barn angegeben ($1b=10^{-28}m^2$).
+	   
 	\item \textbf{Wie hängen die Wirkungsquerschnitte von der Ordnungszahl \boldmath$Z$ und Photonenenergie \boldmath$E_\gamma$ ab?}\\\\
-	\item \textbf{Wie hängt beim Compton-Effekt die Energie des Photons von dem Streuwinkel \boldmath$\vartheta$ ab?}\\\\
-	Das Photon erfährst eine Energieänderung $\Delta E$ in Abhängigkeit vom Streuwinkel nach dem Zusammenhang $\Delta E=\frac{h}{m_ec}(1-cos(\vartheta))$, wobei die Energie $\Delta E$ an das Elektron übertragen wird.
+	Der Wirkungsquerschnitt des Photons $\sigma_\gamma$ ist zusammengesetzt aus den Wirkungsquerschnitten der einzelnen, möglichen Interaktionen, also eben dem Photo- und Compton-Effekt, sowie der Paarbildung. $\sigma_\gamma=\sigma_{Photo}+\sigma_{Compton}+\sigma_{Paar}$. \\
+	Der Wirkungsquerschnitt des Photoeffekts ist gegeben durch die Formel 
+	\begin{equation}
+	\sigma_{Photo}\approx3\cdot10^{12}\frac{Z^5}{E_\gamma^{3.5}}
+	\end{equation}
+	Der des Comptoneffekts ist gegeben durch die Klein-Nishina Gleichung, welche einen linearen Zusammenhang $\sigma_{Compton}\propto Z$ herstellt. Zudem ist sie abhängig von dem Quotient $k=E_\gamma/E_e$.\\
+	Der Wirkungsquerschnitt der Paarbildung wird beschrieben durch die Maximon Gleichung, welche ebenfalls eine Abhängigkeit vom Term $k$ besitzt, sowie $\sigma_{Paar}\propto Z^2$.\\
+	Trägt man den Wirkungsquerschnitt $\sigma_\gamma$ gegen die Energie des Photons $E_\gamma$, so erhält einen Graphen folgender Form\fancyfootnote{Ertley, Camden. (2014). STUDYING THE POLARIZATION OF HARD X-RAY SOLAR FLARES WITH THE GAMMA RAY POLARIMETER EXPERIMENT (GRAPE)}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.6]{crosssection.jpg}
+		\caption{Wirkungsquerschnitt, hier $Z=82$}
+	\end{figure}
+	
+	\item \textbf{Wie hängt beim Comptoneffekt die Energie des Photons von dem Streuwinkel \boldmath$\vartheta$ ab?}\\\\
+	Das Photon erfährst eine Energieänderung $\Delta E$ in Abhängigkeit vom Streuwinkel nach dem Zusammenhang $\Delta E=\frac{m_ec^2}{(1-cos(\vartheta))}$, wobei die Energie $\Delta E$ an das Elektron übertragen wird.
 	\item \textbf{Warum ist eine Paarbildung erst ab \boldmath$E_\gamma\geq1022keV$ zu beobachten?}\\\\
 	Bei der Paarbildung wird ein Elektron-Positron-Paar erzeugt. Beide Teilchen besitzen eine Masse $m_e$ deren Erzeugung Energie nach dem Zusammenhang $E=2\cdot(m_ec^2)=1.022MeV$ erfordert.  
-	\item \textbf{Welche physikalischen Hintergründe haben die in der Abbildung [Abb. 1] auftretenden Strukturen?}\\\\
+	\item \textbf{Welche physikalischen Hintergründe haben die in der Abbildung [Abb. 2] auftretenden Strukturen?}\\\\
+	\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.4]{Abb1.jpg}
+	\caption{Schematisches $\gamma$-Spektrum}
+	\end{figure}
+	\begin{enumerate}
+		\item Die gesamte Energie des Photons wird auf ein Elektron des Germanium Atoms übertragen, welches aus seiner Schale gelöst wird, weshalb sich der Peak auch bei $E=E_\gamma$ befindet.
+		\item Die Compton-Kante ist ein scharfer Cutoff, da die maximale durch den Comptoneffekt übertragene Energie bei $\vartheta=180\degree$ frei wird.
+		\item Der Compton-Untergrund ist die Energie die durch den Comptoneffekt an ein Elektron übertragen wird. Der Streuwinkel ist hier entscheidend für den Anteil der Energie, die abgegeben wird.
+		\item Der Single-Escape-Peak entsteht, da bei der Paarbildung eines der entstandenen Teilchen sich mit einem anderen annihiliert und das so erzeugte Photon mit $511keV$ nicht von dem Detektor manchmal nicht erfasst wird.
+		\item Der Double-Escape-Peak entsteht aus selbigen Grund wie der Single-Escape-Peak, jedoch werden das bei beiden Annihilationen erzeugte Photon, mit je $511keV$, nicht erfasst.
+		\item Die Röntgenpeaks sind die charakteristische Röntgenstrahlung, die durch Anregung eines Elektrons in eine höhere Schale, und deren subsequenten Abfall auf eine tiefere erzeugt werden. 
+		\item Wenn das Photon außerhalb des Detektors durch den Comptoneffekt zurück in diesen gestreut wird, nun mit geringerer Energie, kann es dort seine restliche Energie durch den Photoeffekt abgeben, womit ein weiterer, kontinuierlicher Rückstreu-Peak entsteht. 
+		\item Der Annihilations-Peak entsteht durch die Vernichtung eines Teilchens, das bei der Paarbildung entstanden ist. Ein Photon mit der Masse-Energie des Teilchens, $511keV$, wird emittiert und detektiert.     
+	\end{enumerate}
 	\item \textbf{Was geschieht beim Zusammenführen eines p- und eines n-Kontakts?}\\\\
 	Wird ein n-dotierter Kristall mit einem p-dotierten zusammen entsteht ein p-n-Übergang. Zwischen den beiden Kristallen entsteht eine „Verarmungszone“, durch die Diffusion der Ladungsträger. Diffusion der Ladungsträger beschreibt den Prozess, bei dem die beiden dotierten Kristalle versuchen die Ladungsunterschiede auszugleichen dabei werden nicht ausgleichbare unbewegliche Verunreinigungen erzeugt die man als Dotierung bezeichnet. In der Nähe der Verbindungsstelle kommen diese am häufigsten vor. \\
 	Die Verarmungszone bildet das aktive Detektionsvolumen. Durch Anlegen einer Spannung von außen, kann das Detektionsvolumen vergrößert werden. So kann die Detektionseffizienz erhöht werden.
