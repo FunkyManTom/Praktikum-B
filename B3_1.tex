@@ -63,7 +63,10 @@
 	\tableofcontents
 	\newpage
 	\section{Einführung}
-	\newpage
+	In diesem Versuch wollen wir uns mit der grundlegenden Statistik von Kernzerfällen vertraut machen. Dazu wird bei drei verschiedenen Spannungen die emittierte Strahlung von Kernzerfällen mittels eines Zählrohrs gemessen und diese Daten dann statistisch ausgewertet. \\
+	Die theoretische Vorbereitung beschäftigt sich mit den Grundlagen der Statistik sowie der Funktionsweise des Zählrohrs. Dadurch wurde die Basis für die Auswertung der Versuchsdaten erarbeitet. \\
+	In der Auswertung werden zunächst Poisson sowie Gauß-Verteilungen aus den Messdaten extrahiert, die Intervall-Verteilung mit einer theoretischen Funktion verglichen sowie verschiedene Hypothesen zum $\chi^2$-Test überprüft. Zuletzt wird noch die Totzeit des Zählrohrs mithilfe der Zwei-Präparat-Methode bestimmt. \\\\
+	Aufgrund der aktuellen Pandemiesituation war es uns nicht möglich, die Messungen vor Ort selbst durchzuführen, der Fokus dieses Versuchsprotokolls liegt also auf einer gründlichen theoretischen Vorbereitung und der Auswertung der uns zur Verfügung gestellten Messdaten.
 	\section{Vorbereitung}
 	\subsection{Halbwertszeit von $^{137}$Cs}
 	In dem Versuchsaufbau werden zwei Caesium 137 Quellen verwendet, welches ein Radioaktives Isotop mit einer Halbwertszeit von $30.05a$\fancyfootnote{W.M. Haynes, CRC Handbook of Chemistry and Physics (97th Edition, 2016), Kpt. 11-77} ist.
@@ -145,6 +148,7 @@
 	\begin{equation}
 	\omega(T_{1/2})=\frac{1}{2} \Leftrightarrow \alpha=-\frac{ln(\frac{1}{2})}{T_{1/2}}
 	\end{equation}
+	\newpage \noindent
 	Da in praktischen Experimenten mit mehr als einen Kern gearbeitet wird ist es sinnvoll eine Zerfallswahrscheinlichkeit für $n$ Kerne über eine Zeitspanne zu berechnen, welche eine Binomialverteilung ist.
 	\begin{gather}
 	\omega(n,N,t)=\binom{N}{n}(1-e^{\alpha t})^ne^{-\alpha(N-n)t}\\
@@ -194,8 +198,127 @@
 	Durch mehr Daten können wir die Hypothesen mit geringerer Irrtumswahrscheinlichkeit ausschließen und somit auch die Ablehnungsvorraussetzung schärfer auslegen. Aus den übrig gebliebenen Hypothesen kann man nun eine Verteilung bilden, die mit geringem Fehler den Messwerten entspricht.
 	\newpage
 	\section{Versuchsdurchführung}
+	Wie bereits in der Einführung erläutert fand das Praktikum während der Covid-19 Pandemie, weshalb keine Messdatenerhebung vor Ort möglich war. Stattdessen wurden uns zuvor erhobene Messwerte zur Verfügung gestellt.\\
+	Diese umfassen 3 Messungen über jeweils 45 Minuten von $^{137}Cs$ Quellen in den Anordnungen\\
+	\begin{itemize}
+	\item Quelle 7 bei 500 Volt
+	\item Quelle 7 bei 600 Volt
+	\item Quellen 6 \& 7 bei 500 Volt\\
+	\end{itemize} 
+	Die den Zeitpunkt jeder Zählung beinhalten.\\
+	Sowie Messungen über 5 Minuten in den Anordnungen\\
+	\begin{itemize}
+	\item Quelle 6 bei 500, 600 \& 700 Volt
+	\item Quelle 7 bei 500, 600 \& 700 Volt
+	\item Quellen 6 \& 7 bei 500, 600 \& 700 Volt
+	\item Untergrundmessung bei 500, 600 \& 700 Volt.\\
+	\end{itemize}
+	Der verwendete Versuchsaufbau bestand aus einem Geiger-Müller-Zählrohr, vor welches die zu betrachtende Probe platziert wird. An diesem liegt eine regulierbare Spannungquelle an.\\
+	Das Geiger-Müller-Zählrohr gibt ein Rechtecksignal aus, wenn immer ein Event registriert wird, welches an den Computer weitergeleitet und von diesem ausgewertet wird.
 	\newpage
 	\section{Auswertung}
+	\subsection{Poisson-Verteilung}
+	\begin{center}
+	\vfill
+	\textbf{Abb. 1:}$\quad$Quelle 7 bei 500V: $\lambda=8.18\;,\sigma^2=3.90$	
+	\includegraphics[scale=0.8]{Q7_500V_Poi.pdf}
+	\vfill
+	\textbf{Abb. 2:}$\quad$Quelle 7 bei 600V: $\lambda=10.0\;,\sigma^2=6.01$
+	\includegraphics[scale=0.8]{Q7_600V_Poi.pdf}
+	\vfill\newpage
+	\textbf{Abb. 3:}:$\quad$Quelle 6 \& 7 bei 500V: $\lambda=6.83\;,\sigma^2=2.48$
+	\includegraphics[scale=0.8]{Q67_500V_Poi.pdf}\\
+	jdfbsjbfjsdbjfjsb Hier kommen noch coole Vergleiche hin woooow
+	\end{center}
+	\newpage
+	\subsection{Gauß-Verteilung}
+	\begin{center}
+	\vfill
+	\textbf{Abb. 1:}$\quad$Quelle 7 bei 500V: $m=267.17$	
+	\includegraphics[scale=0.8]{500V_Gauss.pdf}\\
+	\vfill
+	\textbf{Abb. 2:}$\quad$Quelle 7 bei 600V: $m=301.42$	
+	\includegraphics[scale=0.8]{600V_Gauss.pdf}
+	\vfill\newpage
+	\textbf{Abb. 3:}$\quad$Quelle 6 \& 7 bei 500V: $m=365.08$	
+	\includegraphics[scale=0.8]{600V_67_Gauss.pdf}\\
+	jdfbsjbfjsdbjfjsb Hier kommen noch coole Vergleiche hin woooow
+	\end{center}
+	\newpage
+	\subsection{Intervall-Verteilung}
+	\begin{figure}[!h]
+	\centering
+	\textbf{Abb. 4:}$\quad$Quelle 7 bei 600V
+	\includegraphics[scale=0.75]{Inter_7_600.pdf}
+	\end{figure}\noindent
+	Für die Bestimmung des Parameters $a$ einer theoretischen Funktion der Form
+	\[P(t)=N\cdot a\cdot e^{-at}\]
+	verwenden wir das Julia Paket $LsqFit$\fancyfootnote{Den Code können wir bei Fragen nachsenden.}. Da die ersten 4 Werte der Intervall-Verteilung dem mathematischen Modell nicht genügen wurden diese verworfen, da sie das Ergebnis ungenauer ausfallen lassen.\\
+	Man erhält somit einen Fitparameter
+	\begin{equation}
+	a=(0.0767\pm0.0004)\frac{1}{ms}.
+	\end{equation}
+	Somit lässt sich die theoretische Funktion gegen die experimentellen Messwerte auftragen:
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.74]{LsqFit.pdf}
+	\end{figure}
+	\newpage\noindent
+	Algorithmisch ist das Anfitten von theoretischen Funktionen an die Messwerte bei $n=1,2$ durchaus möglich, jedoch sind sie stärker von der Totzeit belastet \& man muss zunehmend mehr Messwerte, die das Ergebnis verfälschen, entfernen.\\
+	Somit ist es leichter diese über den Fitparameter $a$ bei $n=0$ zu berechnen, wofür man die gegebene Formel umformen kann.
+	\begin{gather}
+	a=\frac{a'}{1-a'\tau}\;\Leftrightarrow\;\bar{\tau}=\frac{1-\frac{a'}{a}}{a'},\quad a'=\frac{t}{N}\\
+	\Delta\tau=\left|\frac{\partial\tau}{\partial a}\Delta a\right|=\frac{1}{a^2}\Delta a\\\notag\\
+	\tau=(12.981\pm0.068)ms
+	\end{gather}
+	\subsection{$\chi^2$-Text}
+	Mit dem $\chi^2$-Test prüfen wir nun folgende Hypothesenfür die ersten 51 Messwerte des 10 Sekundenintervalls aus Messung 3:\\
+	\begin{enumerate}
+	\item Präparatstärkekonstant im betrachteten Zeitraum und gleicht dem Mittelwert der51 Messwerte.
+	\item Präparatstärke konstant im betrachteten Zeitraum und gleicht dem Mittelwert der 51 Messwerteminus 10\%.
+	\item Präparatstärke nimmt im betrachteten Zeitraum linear mit der Zeit ab (erste Näherung von exp-Abfall) Die Anfangszählrate ist der Mittelwert, und der Abfall von einer Messung zur anderen sei 1.\\
+	\end{enumerate}
+	
+	\noindent
+	Für die Hypothese 1) berechnet sich das nicht-totzeitkorrigierte $\chi^2$ wie folgt.\[\chi^2=\sum_{i=1}^{51}\frac{\left(n_i-m\right)^2}{m}\]Um dies totzeit-korrigiert anzugeben benötigt an den Vorfaktor: $\frac{1}{1-\frac{m}{\Delta t}\tau}$ damit folgt gesamt:
+	\begin{gather}
+	\chi_{kor}^2=\frac{1}{1-\frac{m}{\Delta t}\tau}\cdot\sum_{i=1}^{51}\frac{\left(n_i-m\right)^2}{m}
+	\end{gather}
+	Wobei $\tau=0,0107s$ die Totzeit des Detektors angibt und $\Delta t$die Länge des gewählten Zeitintervalls angibt ($\Delta t=10s$).Die $n_i$ geben die einzelnen Messwerte an und $m=726,14$ ist der Mittelwert der 51 Messwerte.\\
+	Die Hypothese 2) unterscheidet sich nur geringfügig von 1) in dem vom Mittelwert $10\%$ abgezogen wird, also $90\%$ des Mittelwertes $m$. Durch einen einfachen Vorfaktor von $0,9$ beim Mittelwert kann dies sehr leicht erreicht werden. Es gelten die folgenden Formeln für nichtkorrigierte und korrigierte
+	
+	\begin{gather}
+	\chi^2:\chi^2=\sum_{i=1}^{51}\frac{\left(n_i-0.9m\right)^2}{0.9m}\\
+	\chi_{kor}^2=\frac{1}{1-\frac{0.9m}{\Delta t}\tau}\cdot\sum_{i=1}^{51}\frac{\left(n_i-0.9m\right)^2}{0.9m}
+	\end{gather}
+	
+	\noindent Um in der Hypothese 3) den gewünschten linearen Abfall zu erreichen, der mit 1 pro Messung skaliert ist, wird von der Anfangszählrate (Mittelwert $m$) bei jedem Schritt 1 abgezogen. So ergeben sich folgende Formeln:
+	\begin{gather}
+	\chi^2=\sum_{i=1}^{51}\frac{\left(n_i-(m-i)\right)^2}{(m-i)}\\
+	\chi_{kor}^2=\sum_{i=1}^{51}{\frac{1}{1-\frac{(m-i)}{\Delta t}\tau}\cdot\frac{\left(n_i-(m-i)\right)^2}{(m-i)}}
+	\end{gather}
+	\\
+	\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Hypothese & $\chi^2$ & $\chi_{kor}^2$\\
+		\hline\hline
+		1) & $18.38$ & $82.41$\\
+		\hline
+		2) & $431.90$ & $1436.17$\\
+		\hline
+		3) & $91.43$ & $350.84$\\
+		\hline
+	\end{tabular}
+	\end{center}
+	\noindent
+	\\\\Aus der Tabelle im Anhang kann nun abgelesen werden, welche Werte des $\chi^2$-Tests im gewünschten Fehlerbei fester Anzahl von Messwertenliegen. Für einen Fehler von $5\%$ gilt also Werte zwischen $71,4$ ($\chi_{0.975}^2$) und $32,4$ ($\chi_{0.025}^2$) werden angenommen und alle anderen verworfen.\\
+	Die Halbwertszeit der Hypothese 3) kann einfach ermittelt werden, da es als linearer Zerfall angenommen wird. Durch die Formel \[\frac{m}{2}=m-\frac{t}{10}\] ermittelt werden. Durch Umformen folgt:
+	\begin{equation}
+	t=T_\frac{1}{2}=\left(\frac{m}{2}\right)\cdot10
+	\end{equation}
+	Damit ergibt sich für die Hypothese 3) eine Halbwertszeit von $T_\frac{1}{2}\approx3630.7s$. Dies entspricht etwa einer Stunde. Vergleicht man diese errechnete Halbwertszeit mit dem Literaturwert des $^{137}Cs$ von etwa 30 Jahre, erkennt man, dass das Verwerfen dieser Hypothese durch den $\chi^2$-Test gerechtfertigt ist.
+	\subsection{Totzeit}
 	\newpage
 	\section{Diskussion}
 \end{document}
